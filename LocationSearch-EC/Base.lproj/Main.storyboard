@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CR7-ab-2uf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Location View Controller-->
+        <scene sceneID="5r6-Lt-E6m">
+            <objects>
+                <viewController id="CR7-ab-2uf" customClass="LocationViewController" customModule="LocationSearch_EC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ewz-9u-Jr5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NHx-vZ-BjO">
+                                <rect key="frame" x="0.0" y="64" width="414" height="778"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" placeholder="Search location" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qd1-aX-iwp">
+                                <rect key="frame" x="16" y="84" width="382" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5J6-6o-o4L"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qd1-aX-iwp" firstAttribute="centerY" secondItem="Ewz-9u-Jr5" secondAttribute="centerY" multiplier="0.25" id="Dng-gd-QJG"/>
+                            <constraint firstItem="5J6-6o-o4L" firstAttribute="trailing" secondItem="qd1-aX-iwp" secondAttribute="trailing" constant="16" id="Zf0-Os-YKW"/>
+                            <constraint firstItem="5J6-6o-o4L" firstAttribute="trailing" secondItem="NHx-vZ-BjO" secondAttribute="trailing" id="ZrL-Br-QoX"/>
+                            <constraint firstItem="5J6-6o-o4L" firstAttribute="bottom" secondItem="NHx-vZ-BjO" secondAttribute="bottom" constant="20" id="cej-EN-8hT"/>
+                            <constraint firstItem="qd1-aX-iwp" firstAttribute="leading" secondItem="5J6-6o-o4L" secondAttribute="leading" constant="16" id="hBT-Bd-NaT"/>
+                            <constraint firstItem="NHx-vZ-BjO" firstAttribute="top" secondItem="5J6-6o-o4L" secondAttribute="top" constant="20" id="p8F-6Q-3bu"/>
+                            <constraint firstItem="NHx-vZ-BjO" firstAttribute="leading" secondItem="5J6-6o-o4L" secondAttribute="leading" id="qVO-eI-D2e"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapKitView" destination="NHx-vZ-BjO" id="m9o-bi-PKP"/>
+                        <outlet property="searchBar" destination="qd1-aX-iwp" id="5Xk-P8-zaX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qve-LX-nT4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1882.608695652174" y="119.86607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
