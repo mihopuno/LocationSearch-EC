@@ -13,9 +13,11 @@
 		7A0CFB9C2543DD2E005328B7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0CFB9B2543DD2E005328B7 /* UIView+Extensions.swift */; };
 		7A0CFBA42543DD73005328B7 /* HalfModalTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0CFBA32543DD73005328B7 /* HalfModalTransitionAnimator.swift */; };
 		7A0CFBBE2543E0EE005328B7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0CFBBD2543E0EE005328B7 /* LocationManager.swift */; };
+		7A215375254547B300EBB2B1 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A215374254547B300EBB2B1 /* LocationViewModel.swift */; };
+		7A21537A25454C9E00EBB2B1 /* LocationEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21537925454C9E00EBB2B1 /* LocationEntities.swift */; };
+		7A2153822545514700EBB2B1 /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2153812545514700EBB2B1 /* APIRoutes.swift */; };
 		7A7F967125402EF80088CC2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F967025402EF80088CC2A /* AppDelegate.swift */; };
 		7A7F967325402EF80088CC2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F967225402EF80088CC2A /* SceneDelegate.swift */; };
-		7A7F967525402EF80088CC2A /* ListLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F967425402EF80088CC2A /* ListLocationViewController.swift */; };
 		7A7F967825402EF90088CC2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7F967625402EF90088CC2A /* Main.storyboard */; };
 		7A7F967A25402EFD0088CC2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A7F967925402EFD0088CC2A /* Assets.xcassets */; };
 		7A7F967D25402EFD0088CC2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7F967B25402EFD0088CC2A /* LaunchScreen.storyboard */; };
@@ -24,7 +26,6 @@
 		7A7F96A525402FA20088CC2A /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F96A425402FA20088CC2A /* NetworkRequest.swift */; };
 		7A7F96AD25402FC90088CC2A /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F96AC25402FC90088CC2A /* EndPoints.swift */; };
 		7A7F96B7254030590088CC2A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F96B6254030590088CC2A /* LocationViewController.swift */; };
-		7A7F96C6254031740088CC2A /* ListLocationEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F96C5254031740088CC2A /* ListLocationEntities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,10 +53,12 @@
 		7A0CFBA32543DD73005328B7 /* HalfModalTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalTransitionAnimator.swift; sourceTree = "<group>"; };
 		7A0CFBAD2543DDFC005328B7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7A0CFBBD2543E0EE005328B7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		7A215374254547B300EBB2B1 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		7A21537925454C9E00EBB2B1 /* LocationEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEntities.swift; sourceTree = "<group>"; };
+		7A2153812545514700EBB2B1 /* APIRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
 		7A7F966D25402EF80088CC2A /* LocationSearch-EC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LocationSearch-EC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7F967025402EF80088CC2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A7F967225402EF80088CC2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7A7F967425402EF80088CC2A /* ListLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLocationViewController.swift; sourceTree = "<group>"; };
 		7A7F967725402EF90088CC2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A7F967925402EFD0088CC2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A7F967C25402EFD0088CC2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,7 +72,6 @@
 		7A7F96A425402FA20088CC2A /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		7A7F96AC25402FC90088CC2A /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		7A7F96B6254030590088CC2A /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		7A7F96C5254031740088CC2A /* ListLocationEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLocationEntities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +171,6 @@
 				7A7F967025402EF80088CC2A /* AppDelegate.swift */,
 				7A7F967225402EF80088CC2A /* SceneDelegate.swift */,
 				7A7F967625402EF90088CC2A /* Main.storyboard */,
-				7A7F96B1254030270088CC2A /* Location List */,
 				7A7F96B5254030460088CC2A /* Location */,
 				7A0CFB862543DC38005328B7 /* Utilities */,
 				7A7F96A325402F8F0088CC2A /* Repository */,
@@ -201,23 +202,17 @@
 			children = (
 				7A7F96A425402FA20088CC2A /* NetworkRequest.swift */,
 				7A7F96AC25402FC90088CC2A /* EndPoints.swift */,
+				7A2153812545514700EBB2B1 /* APIRoutes.swift */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		7A7F96B1254030270088CC2A /* Location List */ = {
-			isa = PBXGroup;
-			children = (
-				7A7F96C5254031740088CC2A /* ListLocationEntities.swift */,
-				7A7F967425402EF80088CC2A /* ListLocationViewController.swift */,
-			);
-			path = "Location List";
 			sourceTree = "<group>";
 		};
 		7A7F96B5254030460088CC2A /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				7A21537925454C9E00EBB2B1 /* LocationEntities.swift */,
 				7A7F96B6254030590088CC2A /* LocationViewController.swift */,
+				7A215374254547B300EBB2B1 /* LocationViewModel.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -362,17 +357,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A7F967525402EF80088CC2A /* ListLocationViewController.swift in Sources */,
-				7A7F96C6254031740088CC2A /* ListLocationEntities.swift in Sources */,
 				7A0CFBA42543DD73005328B7 /* HalfModalTransitionAnimator.swift in Sources */,
 				7A0CFB962543DCDA005328B7 /* HalfModalPresentationController.swift in Sources */,
 				7A7F96AD25402FC90088CC2A /* EndPoints.swift in Sources */,
 				7A7F967125402EF80088CC2A /* AppDelegate.swift in Sources */,
 				7A7F96B7254030590088CC2A /* LocationViewController.swift in Sources */,
+				7A2153822545514700EBB2B1 /* APIRoutes.swift in Sources */,
 				7A0CFB912543DC97005328B7 /* HalfModalInteractiveTransition.swift in Sources */,
 				7A7F96A525402FA20088CC2A /* NetworkRequest.swift in Sources */,
 				7A0CFB892543DC63005328B7 /* HalfModalTransitionDelegate.swift in Sources */,
 				7A7F967325402EF80088CC2A /* SceneDelegate.swift in Sources */,
+				7A21537A25454C9E00EBB2B1 /* LocationEntities.swift in Sources */,
+				7A215375254547B300EBB2B1 /* LocationViewModel.swift in Sources */,
 				7A0CFB9C2543DD2E005328B7 /* UIView+Extensions.swift in Sources */,
 				7A0CFBBE2543E0EE005328B7 /* LocationManager.swift in Sources */,
 			);

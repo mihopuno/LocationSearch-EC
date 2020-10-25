@@ -54,7 +54,7 @@ class NetworkRequest {
                         return
                     }
                     let jsonDecoder = JSONDecoder()
-                    jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+//                    jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                     guard let data = data else { return }
                     do {
                         let decoded = try jsonDecoder.decode(T.self, from: data)

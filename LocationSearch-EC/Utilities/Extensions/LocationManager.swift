@@ -10,10 +10,10 @@ import Foundation
 import CoreLocation
 import MapKit
 
-protocol SLLocationManagerDelegate : class {
+protocol LocationManagerDelegate : class {
     
-    func locationSuccessfullyFetched(location: CLLocation);
-    func locationFailedFetchingLocation(error: Error);
+    func locationSuccessfullyFetched(location: CLLocation)
+    func locationFailedFetchingLocation(error: Error)
 }
 
 class LocationManager : NSObject, CLLocationManagerDelegate{
@@ -22,7 +22,7 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
     public static let sharedInstance = LocationManager()
     
     // MARK: Public Properties
-    public weak var delegate : SLLocationManagerDelegate?
+    public weak var delegate : LocationManagerDelegate?
     public var isAbleToFetchLocation : Bool = false
     
     // MARK: Private Properties
@@ -51,20 +51,12 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
-        if let delegate = self.delegate {
-            
-            delegate.locationFailedFetchingLocation(error: error)
-        }
+        delegate?.locationFailedFetchingLocation(error: error)
     }
     
-    func locationManagerDidResumeLocationUpdates(_ manager: CLLocationManager) {
+    func locationManagerDidResumeLocationUpdates(_ manager: CLLocationManager) { }
     
-    }
-    
-    func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
-        
-    }
+    func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) { }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
@@ -104,14 +96,12 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
     
     // MARK: Utility Methods
     public func startGeolocation(){
-        if let manager = self.coreLocationManager {
-            manager.startUpdatingLocation()
-        }
+        guard let manager = self.coreLocationManager else { return }
+        manager.startUpdatingLocation()
     }
     
     public func pauseGeolocation(){
-        if let manager = self.coreLocationManager {
-            manager.stopUpdatingLocation()
-        }
+        guard let manager = self.coreLocationManager else { return }
+        manager.stopUpdatingLocation()
     }
 }
