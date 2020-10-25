@@ -104,7 +104,8 @@ struct MapAnnotation {
         let pin = MKPointAnnotation()
         pin.coordinate = CLLocationCoordinate2D(latitude: latitude,
                                                 longitude: longitude)
-        pin.title = "Current Location"
+        pin.title = item.title
+        pin.subtitle = item.vicinity
         return pin
     }
 }

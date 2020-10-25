@@ -11,7 +11,7 @@ import CoreData
 struct EndPoints<T> {
     var httpMethod: HTTPMethod
     var headers: HTTPHeaders?
-    var timeout: TimeInterval = 10
+    var timeout: TimeInterval = 20
     var httpBody: Data?
     
     var url: URL

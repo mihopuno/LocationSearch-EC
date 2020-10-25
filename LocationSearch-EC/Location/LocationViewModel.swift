@@ -30,6 +30,7 @@ class LocationViewModel : Identifiable, ObservableObject {
         pin.coordinate = CLLocationCoordinate2D(latitude: currentLocation!.coordinate.latitude,
                                                 longitude: currentLocation!.coordinate.longitude)
         pin.title = "Current Location"
+        pin.subtitle = " "
         return pin
     }
     
@@ -64,9 +65,14 @@ class LocationViewModel : Identifiable, ObservableObject {
 extension LocationViewModel : LocationManagerDelegate {
     func locationSuccessfullyFetched(location: CLLocation) {
         currentLocation = location
+        CoreDataManager.shared.saveLocation(location.coordinate.latitude,
+                                            location.coordinate.longitude,
+                                            location.verticalAccuracy,
+                                            completion: nil)
     }
     
     func locationFailedFetchingLocation(error: Error) {
-        
+        guard let location = CoreDataManager.shared.retrieveLocation() else { return }
+        currentLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
     }
 }

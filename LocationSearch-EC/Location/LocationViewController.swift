@@ -49,10 +49,8 @@ class LocationViewController : UIViewController {
     
     private func addMapMarker() {
         guard let mapAnnotations = self.viewModel.dataSource else { return }
-        for item in mapAnnotations {
-            guard let annotation = item.pointAnnotation else { continue }
-            self.mapKitView.addAnnotation(annotation)
-        }
+        self.mapKitView.addAnnotations(mapAnnotations.map({ $0.pointAnnotation! }))
+        self.mapKitView.layoutIfNeeded()
     }
 }
 
@@ -74,7 +72,7 @@ extension LocationViewController : UISearchBarDelegate {
 //    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.resignFirstResponder()
+        searchBar.resignFirstResponder()
         
         // Cancel the currently pending item
         pendingRequestWorkItem?.cancel()
@@ -91,6 +89,6 @@ extension LocationViewController : UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.resignFirstResponder()
+        searchBar.resignFirstResponder()
     }
 }
