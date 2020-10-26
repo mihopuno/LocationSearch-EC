@@ -48,7 +48,7 @@ class LocationViewModel : Identifiable, ObservableObject {
             guard let self = self else { return }
             switch result {
             case .success(let resultModel):
-                self.dataSource = resultModel.results.items.map({ MapAnnotation($0) })
+                self.dataSource = resultModel.results.items.map({ MapAnnotation($0, location.coordinate.latitude, location.coordinate.longitude) })
                 break
             case .failure(let error):
                 self.error = error

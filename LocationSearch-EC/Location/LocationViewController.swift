@@ -56,21 +56,6 @@ class LocationViewController : UIViewController {
 
 extension LocationViewController : UISearchBarDelegate {
     
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        // Cancel the currently pending item
-//        pendingRequestWorkItem?.cancel()
-//
-//        // Wrap our request in a work item
-//        let requestWorkItem = DispatchWorkItem { [weak self] in
-//            self?.viewModel.requestLocation(query: searchText)
-//        }
-//
-//        // Save the new work item and execute it after 250 ms
-//        pendingRequestWorkItem = requestWorkItem
-//        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250),
-//                                      execute: requestWorkItem)
-//    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         

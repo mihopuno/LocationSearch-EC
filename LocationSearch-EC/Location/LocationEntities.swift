@@ -91,9 +91,16 @@ struct AddressModel : Codable {
 struct MapAnnotation {
     
     var item : ItemModel
+    private var currentLatitude : Double
+    private var currentLongitude : Double
+    private var currentCoordinate : CLLocation
+
     
-    init(_ item: ItemModel) {
+    init(_ item: ItemModel, _ currentLatitude: Double, _ currentLongitude: Double) {
         self.item = item
+        self.currentLatitude = currentLatitude
+        self.currentLongitude = currentLongitude
+        self.currentCoordinate = CLLocation(latitude: currentLatitude, longitude: currentLongitude)
     }
     
     var pointAnnotation : MKPointAnnotation? {
@@ -102,10 +109,11 @@ struct MapAnnotation {
             return nil
         }
         let pin = MKPointAnnotation()
-        pin.coordinate = CLLocationCoordinate2D(latitude: latitude,
-                                                longitude: longitude)
+        pin.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         pin.title = item.title
-        pin.subtitle = item.vicinity
+        let pinCoordinate = CLLocation(latitude: latitude, longitude: longitude)
+        let distance = currentCoordinate.distance(from: pinCoordinate)
+        pin.subtitle = "Distance: \(distance)"
         return pin
     }
 }
